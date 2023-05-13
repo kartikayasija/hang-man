@@ -33,11 +33,11 @@ function Game(){
 
   return(
     <div className='game'>
-      <Stand />
+      <Stand wrongWords={wrongWords}/>
       <Wrong wrongWords ={wrongWords}></Wrong>
       <Words word={word} correctWords={correctWords} />
       {notification && <Notification />}
-      <Winner word={word} correctWords={correctWords}/>
+      <Winner word={word} correctWords={correctWords} wrongWords={wrongWords} />
     </div>
   )
 }

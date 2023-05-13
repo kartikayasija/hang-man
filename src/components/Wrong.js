@@ -1,5 +1,4 @@
 function Wrong({wrongWords}) {
-  // const wrongWords = ['a','b','c','d',]
   return (
     <div className="wrong-letters-container">
       <div>
