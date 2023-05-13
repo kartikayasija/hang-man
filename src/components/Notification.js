@@ -5,3 +5,5 @@ function Notification() {
     </div>
   );
 }
+
+export default Notification;
