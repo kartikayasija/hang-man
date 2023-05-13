@@ -1,38 +1,159 @@
 .App {
+  background: linear-gradient(to right, #141e30 10%, #243b55 100%);
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.heading {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game {
+  padding: 20px 30px;
+  position: relative;
+  margin: 8% auto;
+  height: 40vh;
+  width: 450px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.figure {
+  width: 100%;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.figure-container {
+  height: 50vh;
+  fill: transparent;
+  stroke: rgb(143, 130, 130);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  padding-bottom: 20px;
+  position: relative;
+}
+.pedestal {
+  stroke-width: 10px;
+}
+.bottom-rod {
+  stroke-width: 10px;
+  stroke: rgb(126, 109, 109);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: absolute;
+}
+.rod-part {
+  stroke-width: 10px;
+  stroke: rgb(100, 92, 92);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: absolute;
+}
+
+.head {
+  stroke-width: 10px;
+  stroke: rgb(202, 196, 196);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: fixed;
+}
+
+.body {
+  stroke-width: 10px;
+  stroke: rgb(172, 165, 165);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: absolute;
+}
+
+.left-arm {
+  stroke-width: 10px;
+  stroke: rgb(177, 174, 174);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: absolute;
+}
+
+.right-arm {
+  stroke-width: 10px;
+  stroke: rgb(151, 145, 145);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: absolute;
+}
+
+.left-leg {
+  stroke-width: 10px;
+  stroke: rgb(155, 145, 145);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: absolute;
+}
+
+.right-leg {
+  stroke-width: 10px;
+  stroke: rgb(138, 128, 128);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  position: absolute;
+}
+
+.wrong-letters-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: right;
 }
 
-.App-link {
-  color: #61dafb;
+.wrong-letters-container p {
+  margin: 0 0 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrong-letters-container span {
+  font-size: 24px;
+}
+
+.word {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.letter {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 5px;
+  background-color: rgb(32, 29, 29);
+  color: #dfe8f0;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.notification-container {
+  background-color: rgba(58, 49, 49, 0.3);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.notification-container p {
+  margin: 0;
 }
