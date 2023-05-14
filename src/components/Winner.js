@@ -1,10 +1,13 @@
 function Winner({ word, correctWords, wrongWords, restartGame }) {
   const sortedWord = word.split("").sort().join("");
   const sortedCorrectWords = correctWords.slice().sort().join("");
+  const uniqueWord = [...new Set(sortedWord)].join('');
   let isWinner = null;
-  if (sortedWord === sortedCorrectWords) isWinner = true;
-  if (wrongWords.length > 5) isWinner = false;
-  
+  if(word!==''){
+    if (uniqueWord === sortedCorrectWords) isWinner = true;
+    if (wrongWords.length > 5) isWinner = false;
+  }
+
   if (isWinner) {
     return (
       <div className="popup-container">
