@@ -1,4 +1,4 @@
-function Winner({ word, correctWords, wrongWords }) {
+function Winner({ word, correctWords, wrongWords, restartGame }) {
   const sortedWord = word.split("").sort().join("");
   const sortedCorrectWords = correctWords.slice().sort().join("");
   let isWinner = null;
@@ -11,7 +11,7 @@ function Winner({ word, correctWords, wrongWords }) {
         <div className="popup">
           <h2>Yuhu!!</h2>
           <h3>You Won</h3>
-          <button id="play-button">Play Again</button>
+          <button id="play-button" onClick={restartGame}>Play Again</button>
         </div>
       </div>
     );
@@ -20,7 +20,7 @@ function Winner({ word, correctWords, wrongWords }) {
         <div className="popup">
           <h2>Oww!!</h2>
           <h3>You Lost</h3>
-          <button id="play-button">Play Again</button>
+          <button id="play-button" onClick={restartGame}>Play Again</button>
         </div>
       </div>
     )

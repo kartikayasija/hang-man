@@ -4,10 +4,9 @@ import Words from './Words';
 import Wrong from './Wrong';
 import Notification from './Notification';
 import Winner from './Winner';
-
 function Game(){
-  const word = "abc";  
-
+    
+  const word = 'abc';
   const [wrongWords,setWrongWords] = useState([]);
   const [correctWords,setCorrectWords] = useState([]);
   const [notification,setNotification] = useState(false);
@@ -31,13 +30,18 @@ function Game(){
     };
   }, [wrongWords, correctWords]);
 
+  const restartGame = () => {
+    setWrongWords([]);
+    setCorrectWords([]);
+  };
+
   return(
     <div className='game'>
       <Stand wrongWords={wrongWords}/>
       <Wrong wrongWords ={wrongWords}></Wrong>
       <Words word={word} correctWords={correctWords} />
       {notification && <Notification />}
-      <Winner word={word} correctWords={correctWords} wrongWords={wrongWords} />
+      <Winner word={word} correctWords={correctWords} wrongWords={wrongWords} restartGame={restartGame}/>
     </div>
   )
 }
